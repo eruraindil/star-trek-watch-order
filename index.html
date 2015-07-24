@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Star Trek Watch Order</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="/static/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body data-ng-controller="appController">
+    <div class="container-fluid">
+      <h1>Star Trek Watch Order</h1>
+
+      <table class="table">
+        <tr>
+          <th>Chrono order</th>
+          <th>Franchise order</th>
+          <th>Watch?</th>
+          <th>Series</th>
+          <th>Series Order</th>
+          <th>Season</th>
+          <th>Episode</th>
+          <th>Title</th>
+          <th>Stardate</th>
+          <th>Directed by</th>
+          <th>Written by</th>
+          <th>Story by</th>
+          <th>Air date</th>
+          <th>Production code</th>
+          <th>Summary</th>
+        </tr>
+        <tr data-ng-repeat="episode in episodes|orderBy:\u0022Chrono Order\u0022">
+          <td data-ng-repeat="field in episode">
+            {{field}}
+          </td>
+        </tr>
+      </table>
+
+      <footer>
+        <h2>References</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </footer>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/static/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -7,8 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Star Trek Watch Order</title>
 
-    <!-- Bootstrap -->
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/animate.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,38 +20,48 @@
     <script src="app.js"></script>
   </head>
   <body data-ng-controller="appController">
-    <div class="container-fluid">
-      <h1>Star Trek Watch Order</h1>
+    <div class="container">
+      <div class="page-header">
+        <h1>Star Trek Watch Order <small>(only the good ones)</small></h1>
+      </div>
+      <h1 data-ng-show="loading" class="animated pulse infinite text-center"><span class="glyphicon glyphicon-refresh"></span> LOADING</h1>
 
-      <table class="table">
-        <tr>
-          <th>Chrono order</th>
-          <th>Franchise order</th>
-          <th>Watch?</th>
-          <th>Series</th>
-          <th>Series Order</th>
-          <th>Season</th>
-          <th>Episode</th>
-          <th>Title</th>
-          <th>Stardate</th>
-          <th>Directed by</th>
-          <th>Written by</th>
-          <th>Story by</th>
-          <th>Air date</th>
-          <th>Production code</th>
-          <th>Summary</th>
-        </tr>
-        <tr data-ng-repeat="episode in episodes|orderBy:\u0022Chrono Order\u0022">
-          <td data-ng-repeat="field in episode">
-            {{field}}
-          </td>
-        </tr>
-      </table>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-{{episode.series|colour}}" class data-ng-repeat="episode in episodes | orderBy: 'chrono_order' | filter: { watch: 'Yes' }">
+          <div class="panel-heading" role="tab" id="heading{{episode.franchise_order}}">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{episode.franchise_order}}" aria-expanded="true" aria-controls="collapse{{episode.franchise_order}}">
+                {{episode.series}} {{episode.season}}x{{episode.episode}} - {{episode.title}}
+              </a>
+            </h4>
+          </div>
+          <div id="collapse{{episode.franchise_order}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{episode.franchise_order}}">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>{{episode.title}}</h2>
+                  <p>{{episode.summary}}</p>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <tr>
+                <th>Directed by</th>
+                <td><a target="_blank" class="btn btn-xs btn-info" href="https://www.google.ca/search?q={{episode.directed_by|urlFormat}}+director">{{episode.directed_by}}</a></td>
+                <th>Written by</th>
+                <td><div ng-bind-html="episode.written_by|urlListFormat|unsafe"></div></td>
+                <th data-ng-if="episode.written_by != episode.story_by">Story by</th>
+                <td data-ng-if="episode.written_by != episode.story_by"><div ng-bind-html="episode.story_by|urlListFormat|unsafe"></div></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
 
       <footer>
         <h2>References</h2>
         <ul>
-          <li></li>
+          <li data-ng-repeat="reference in references[0]"><a href="{{reference}}">{{reference}}</a></li>
         </ul>
       </footer>
     </div>

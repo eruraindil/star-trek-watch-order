@@ -2,17 +2,41 @@ var app = angular.module('myApp', []);
 
 app.controller('appController', function($scope, $http) {
   $scope.loading = true;
-  $http.get('episodes.json').then(function(res){
-    $scope.episodes = res.data;
-  })
-  .finally(function () {
-    // Hide loading spinner whether our call succeeded or failed.
-    $scope.loading = false;
-  });
+  $scope.episodes = [];
+  $scope.references = [];
 
-  $http.get('references.json').then(function(res){
-    $scope.references = res.data;
-  });
+  $scope.getEpisodes = function() {
+    $http({method: 'GET', url: "episodes.json"}).
+      success(function(data, status) {
+        $scope.episodes = data;
+        console.log("success");
+      }).
+      error(function(data, status) {
+        console.log(data || status);
+      }).
+      finally(function () {
+        // Hide loading spinner whether our call succeeded or failed.
+        $scope.loading = false;
+      });
+  }
+
+  $scope.getReferences = function() {
+    $http({method: 'GET', url: "references.json"}).
+      success(function(data, status) {
+        $scope.references = data;
+        console.log("success");
+      }).
+      error(function(data, status) {
+        console.log(data || status);
+      });
+  }
+
+  // $http.get('references.json').then(function(res){
+  //   $scope.references = res.data;
+  // });
+
+  $scope.getEpisodes();
+  $scope.getReferences();
 
 });
 

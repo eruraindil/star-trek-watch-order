@@ -60,9 +60,12 @@
 
       <footer>
         <h2>References</h2>
-        <ul>
-          <li data-ng-repeat="reference in references[0]"><a href="{{reference}}">{{reference}}</a></li>
-        </ul>
+        <div data-ng-repeat="(title,reference) in references[0]">
+          <h3>{{title}}</h3>
+          <ul>
+            <li data-ng-repeat="url in reference"><a target="_blank" href="{{url}}">{{url}}</a></li>
+          </ul>
+        </div>
       </footer>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

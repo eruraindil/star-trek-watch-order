@@ -206,7 +206,7 @@
   {
     "chrono_order":112,
     "franchise_order":13,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":11,
     "season":1,
@@ -223,7 +223,7 @@
   {
     "chrono_order":113,
     "franchise_order":14,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":12,
     "season":1,
@@ -240,7 +240,7 @@
   {
     "chrono_order":109,
     "franchise_order":15,
-    "watch":"Yes",
+    "watch":"No",
     "series":"TOS",
     "series_order":13,
     "season":1,
@@ -325,7 +325,7 @@
   {
     "chrono_order":116,
     "franchise_order":20,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":18,
     "season":1,
@@ -342,7 +342,7 @@
   {
     "chrono_order":118,
     "franchise_order":21,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":19,
     "season":1,
@@ -376,7 +376,7 @@
   {
     "chrono_order":119,
     "franchise_order":23,
-    "watch":"Yes",
+    "watch":"No",
     "series":"TOS",
     "series_order":21,
     "season":1,
@@ -393,7 +393,7 @@
   {
     "chrono_order":121,
     "franchise_order":24,
-    "watch":"Maybe",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":22,
     "season":1,
@@ -444,7 +444,7 @@
   {
     "chrono_order":123,
     "franchise_order":27,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":25,
     "season":1,
@@ -461,7 +461,7 @@
   {
     "chrono_order":124,
     "franchise_order":28,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":26,
     "season":1,
@@ -648,7 +648,7 @@
   {
     "chrono_order":138,
     "franchise_order":39,
-    "watch":"Yes",
+    "watch":"No",
     "series":"TOS",
     "series_order":37,
     "season":2,
@@ -682,7 +682,7 @@
   {
     "chrono_order":141,
     "franchise_order":41,
-    "watch":"Yes",
+    "watch":"No",
     "series":"TOS",
     "series_order":39,
     "season":2,
@@ -801,7 +801,7 @@
   {
     "chrono_order":146,
     "franchise_order":48,
-    "watch":"Yes",
+    "watch":"No",
     "series":"TOS",
     "series_order":46,
     "season":2,
@@ -920,7 +920,7 @@
   {
     "chrono_order":150,
     "franchise_order":55,
-    "watch":"Yes",
+    "watch":"No",
     "series":"TOS",
     "series_order":53,
     "season":2,
@@ -988,7 +988,7 @@
   {
     "chrono_order":156,
     "franchise_order":59,
-    "watch":"Yes",
+    "watch":"Maybe",
     "series":"TOS",
     "series_order":57,
     "season":3,
@@ -1107,7 +1107,7 @@
   {
     "chrono_order":161,
     "franchise_order":66,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":64,
     "season":3,
@@ -1277,7 +1277,7 @@
   {
     "chrono_order":173,
     "franchise_order":76,
-    "watch":"No",
+    "watch":"Yes",
     "series":"TOS",
     "series_order":74,
     "season":3,
@@ -1464,7 +1464,7 @@
   {
     "chrono_order":182,
     "franchise_order":87,
-    "watch":"Maybe",
+    "watch":"Yes",
     "series":"MOV",
     "series_order":6,
     "season":1,
